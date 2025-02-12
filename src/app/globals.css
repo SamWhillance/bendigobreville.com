@@ -11,11 +11,3 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
-
-/* Add a serif font for the large titles */
-@font-face {
-  font-family: 'Freight Display';
-  src: url('/fonts/FreightDispProBook-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} 

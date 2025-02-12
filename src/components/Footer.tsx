@@ -1,13 +1,14 @@
 import Link from "next/link";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-xl">
+            <Link href="/" className="text-xl font-bold">
               Bendigo Breville
             </Link>
             <div className="mt-4">
@@ -15,9 +16,6 @@ const Footer = () => {
                 Fast, reliable repairs and maintenance for most Breville coffee
                 machines in the Greater Bendigo region.
               </p>
-              <a href="tel:+61468385315" className="text-gray-400 block mt-2">
-                +61 468 385 315
-              </a>
             </div>
           </div>
 
@@ -49,26 +47,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="uppercase text-sm font-medium mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Hours */}
           <div>
             <h4 className="uppercase text-sm font-medium mb-4">
@@ -79,6 +57,10 @@ const Footer = () => {
               <li>Saturday - Sunday: Closed</li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-8 w-full md:w-auto">
+          <WhatsAppButton />
         </div>
 
         <div className="mt-16 text-center text-gray-400 text-sm">

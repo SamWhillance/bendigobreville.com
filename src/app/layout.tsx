@@ -1,6 +1,12 @@
 import "./globals.css";
 
-import { Cormorant_Garamond, Inter, Playfair_Display } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  DM_Sans,
+  Inter,
+  Lato,
+  Playfair_Display,
+} from "next/font/google";
 
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
@@ -24,6 +30,19 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const lato = Lato({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lato",
+  weight: ["100", "300", "400", "700", "900"],
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
+
 export const metadata: Metadata = {
   title: "Bendigo Breville - Professional Appliance Repair Services",
   description:
@@ -36,7 +55,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${cormorant.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lato.variable}`}
+    >
       <body className={inter.className}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
