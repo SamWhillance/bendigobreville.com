@@ -9,6 +9,7 @@ import {
 } from "next/font/google";
 
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lato.variable}`}
     >
       <body className={inter.className}>
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-CBQVZTTY25" />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
