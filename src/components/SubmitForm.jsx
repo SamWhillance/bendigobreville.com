@@ -18,7 +18,7 @@ const SubmitFormButton = () => {
           clipRule="evenodd"
         />
       </svg>
-      <span className="text-lg font-medium">Request a Repair Quote</span>
+      <span className="text-lg font-medium">Request a Repair</span>
     </a>
   );
 };
