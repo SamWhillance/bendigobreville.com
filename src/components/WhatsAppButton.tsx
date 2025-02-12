@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
       )}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-full flex items-center justify-center space-x-2 transition-colors shadow-lg"
+      className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-full flex items-center justify-center space-x-2 transition-colors shadow-lg"
     >
       <svg
         className="w-6 h-6"

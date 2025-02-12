@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ModelList from "@/components/ModelList";
+import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 interface Service {
@@ -58,6 +59,7 @@ export default function Home() {
             We service most Breville models.
           </h3>
           <ModelList />
+          <SubmitFormButton />
           <WhatsAppButton />
         </div>
       </section>

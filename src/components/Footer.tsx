@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "./WhatsAppButton";
 
 const Footer = () => {
@@ -60,7 +61,14 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 w-full md:w-auto">
-          <WhatsAppButton />
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="w-full md:w-1/2">
+              <SubmitFormButton />
+            </div>
+            <div className="w-full md:w-1/2">
+              <WhatsAppButton />
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 text-center text-gray-400 text-sm">
