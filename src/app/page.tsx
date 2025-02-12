@@ -71,7 +71,7 @@ export default function Home() {
               className={`relative ${service.bgColor} rounded-t-[2.5rem] p-8 md:p-12 pb-24 md:pb-32 text-white overflow-hidden ${service.classNames}`}
             >
               {service.image && (
-                <div className="absolute right-0 bottom-0 w-[45%] h-[90%]">
+                <div className="absolute right-0 top-0 md:bottom-0 w-[45%] h-[90%]">
                   <div
                     className="relative w-full h-full"
                     style={{ aspectRatio: "3/4" }}
@@ -80,7 +80,7 @@ export default function Home() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-contain opacity-25 md:opacity-100"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
@@ -93,16 +93,16 @@ export default function Home() {
                     <h2 className="text-3xl md:text-5xl font-[300] tracking-tight font-dm-sans uppercase">
                       {service.title}
                     </h2>
-                    <p className="text-white/80 text-md md:text-base font-sans max-w-[65%] md:max-w-full">
+                    <p className="text-white/80 text-md md:text-base font-sans max-w-[60%] md:max-w-full">
                       {service.description}
                     </p>
-                    <Link
+                    {/* <Link
                       href={service.link}
                       className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white text-black rounded-full hover:bg-gray-100"
                     >
                       <span className="sr-only">View</span>
                       <span className="text-sm">→</span>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
