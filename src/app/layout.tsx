@@ -48,6 +48,14 @@ export const metadata: Metadata = {
   title: "Bendigo Breville - Professional Appliance Repair Services",
   description:
     "Expert Breville appliance repair, maintenance, and parts in Bendigo",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
 };
 
 export default function RootLayout({
