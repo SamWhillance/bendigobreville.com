@@ -13,8 +13,8 @@ const ModelList = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="flex flex-wrap gap-2 mb-12 md:justify-center">
+    <div className="max-w-6xl mx-auto rounded-3xl p-4 border border-gray-300 bg-gray-50 mb-8">
+      <div className="flex flex-wrap gap-3 md:justify-center">
         {models.map((model) => (
           <a
             href={`https://wa.me/61468385315?text=${encodeURIComponent(
@@ -25,7 +25,7 @@ const ModelList = () => {
           >
             <div
               key={model}
-              className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600 hover:bg-gray-200 transition-colors"
+              className="border font-bold border-gray-300 px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-800 hover:bg-blue-500 hover:text-white transition-colors"
             >
               {model}
             </div>

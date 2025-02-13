@@ -47,7 +47,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-6 py-16 mt-[3rem] mb-[6rem] max-w-2xl mx-auto md:text-center relative">
         <div className="mx-auto pb-4 mb-2 flex flex-col md:items-center">
-          <h1 className="text-4xl md:text-6xl md:mt-12 font-[300] mb-4 tracking-tight font-lato font-bold">
+          <h1 className="text-4xl md:text-6xl mt-8 md:mt-12 font-[300] mb-4 tracking-tight font-lato font-bold">
             Coffee Machine Repairs & Servicing
           </h1>
           <p className="text-gray-600 max-w-lg text-base md:text-lg mb-12">
@@ -56,7 +56,7 @@ export default function Home() {
           </p>
 
           <h3 className="text-gray-600 max-w-lg text-base md:text-lg mb-2">
-            We service most Breville models.
+            We service these popular Breville coffee machines
           </h3>
           <ModelList />
           <SubmitFormButton />

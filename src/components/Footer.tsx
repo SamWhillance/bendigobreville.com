@@ -71,7 +71,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 text-center text-gray-400 text-sm">
+        <div className="flex justify-center mb-8 mt-8">
+          <img
+            src="https://imgproxy.attic.sh/fD2Zlf-JK3L6F3HGNJf4vMw2hYDil5AWqa9JGkArQEM/rs:fit:128:128:1:1/t:1:FF00FF:false:false/pngo:false:true:256/aHR0cHM6Ly9hdHRp/Yy5zaC9sd2huMmFr/Z2ZsZjU1OXB1ZXBl/YTNsajEwNGJs.png"
+            alt="Breville espresso machine emoji"
+            width="40"
+            height="40"
+          />
+        </div>
+
+        <div className="mt-8 text-center text-gray-400 text-sm">
           <p>
             &copy; {new Date().getFullYear()} Bendigo Breville. All rights
             reserved.
