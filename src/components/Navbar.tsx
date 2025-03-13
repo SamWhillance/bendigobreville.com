@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Logo from "./Logo";
 import WhatsAppButton from "./WhatsAppButton";
 
@@ -47,6 +46,12 @@ export default function Navbar() {
           
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
+            <a
+              href="#maintenance"
+              className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
+            >
+              Maintenance
+            </a>
             <a
               href="#services"
               className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
@@ -127,11 +132,11 @@ export default function Navbar() {
               
               <div className="flex flex-col space-y-8 items-center">
                 <a
-                  href="#services"
+                  href="#maintenance"
                   className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Services
+                  Maintenance
                 </a>
                 <a
                   href="#machines"
@@ -139,6 +144,13 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Machines
+                </a>
+                <a
+                  href="#services"
+                  className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Services
                 </a>
                 <a
                   href="#testimonials"

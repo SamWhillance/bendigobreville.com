@@ -6,7 +6,7 @@ export default function SubmitFormButton() {
       href="https://slow-flavor-7b8.notion.site/196b33e58a0980b7ba79c69aecdc8a65?pvs=105"
       target="_blank"
       rel="noopener noreferrer"
-      className="relative overflow-hidden group rounded-full bg-gradient-to-br from-amber-500 to-red-500 px-6 py-3 text-white font-medium transition-all duration-300 hover:shadow-glow flex items-center gap-2"
+      className="relative overflow-hidden group rounded-full bg-gradient-to-br from-amber-500 to-red-500 px-6 py-3 text-white font-medium transition-all duration-300 hover:shadow-glow flex items-center justify-center gap-2"
     >
       <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute inset-0 w-full h-full opacity-20">

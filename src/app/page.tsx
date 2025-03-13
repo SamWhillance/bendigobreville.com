@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* Why Service Section */}
-      <section className="py-20 relative">
+      <section id="maintenance" className="py-20 relative">
         <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-red-500/10 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-amber-500/10 to-transparent rounded-full blur-3xl"></div>
         
@@ -217,28 +217,6 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Models Section */}
-      <section id="machines" className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
-              Machines We Service
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              We specialize in repairing and maintaining these popular Breville coffee machines
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-red-500/10 rounded-3xl blur-xl"></div>
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-              <ModelList />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      
       {/* Services Section */}
       <section id="services" className="py-24 relative">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
@@ -353,6 +331,27 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Models Section */}
+      <section id="machines" className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
+              Machines We Service
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              We specialize in repairing and maintaining these popular Breville coffee machines
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-red-500/10 rounded-3xl blur-xl"></div>
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+              <ModelList />
             </div>
           </div>
         </div>
