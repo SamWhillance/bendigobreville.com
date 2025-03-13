@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ModelList from "@/components/ModelList";
 import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -72,12 +71,157 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Why Service Section */}
+      <section className="py-20 relative">
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-red-500/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-amber-500/10 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-amber-500">
+              Why Regular Servicing Is Critical
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Protect your investment and avoid costly repairs with regular maintenance
+            </p>
+          </div>
+          
+          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-white">Prevent Catastrophic Damage</h3>
+                <div className="space-y-4 text-gray-300">
+                  <p>
+                    Without regular servicing, your coffee machine's boilers can develop serious issues that lead to permanent damage. Over time, mineral deposits build up inside the boiler and steam system.
+                  </p>
+                  <p className="font-medium text-amber-300">
+                    When left unchecked, these boilers can begin blasting extremely hot steam from the top, directing it right onto the main electronic PCB that controls the heating elements.
+                  </p>
+                  <p>
+                    This creates a dangerous situation where moisture and electronics meet - eventually shorting the circuits and causing your machine to:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Overheat unpredictably</li>
+                    <li>Fail to heat properly</li>
+                    <li>Blow fuses and thermal switches</li>
+                    <li>Develop electrical shorts</li>
+                    <li>Completely stop working ("brick")</li>
+                  </ul>
+                  
+                  {/* Animated Damaged Coffee Machine */}
+                  <div className="relative mt-8 mb-8 mx-auto max-w-xs">
+                    <div className="animate-shake relative">
+                      <div className="relative w-full h-64">
+                        <Image 
+                          src="/models/920.png" 
+                          alt="Damaged Breville Dual Boiler" 
+                          fill
+                          className="object-contain filter drop-shadow-[0_0_15px_rgba(239,68,68,0.8)]"
+                        />
+                        
+                        {/* Steam Animation 1 - Center */}
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-40 opacity-0 animate-steam1">
+                          <div className="w-full h-full bg-gradient-to-t from-transparent via-white/80 to-white/40 blur-md rounded-full"></div>
+                        </div>
+                        
+                        {/* Steam Animation 2 - Left */}
+                        <div className="absolute top-0 left-1/3 transform -translate-x-1/2 w-8 h-32 opacity-0 animate-steam2">
+                          <div className="w-full h-full bg-gradient-to-t from-transparent via-white/70 to-white/30 blur-md rounded-full"></div>
+                        </div>
+                        
+                        {/* Steam Animation 3 - Right */}
+                        <div className="absolute top-0 right-1/3 transform translate-x-1/2 w-8 h-36 opacity-0 animate-steam3">
+                          <div className="w-full h-full bg-gradient-to-t from-transparent via-white/75 to-white/35 blur-md rounded-full"></div>
+                        </div>
+                        
+                        {/* Additional Steam Particles */}
+                        <div className="absolute top-2 left-[45%] w-3 h-20 opacity-0 animate-steam2">
+                          <div className="w-full h-full bg-white/90 blur-md rounded-full"></div>
+                        </div>
+                        
+                        <div className="absolute top-1 right-[45%] w-3 h-16 opacity-0 animate-steam3">
+                          <div className="w-full h-full bg-white/90 blur-md rounded-full"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-center text-amber-300 text-sm mt-2 animate-pulse font-medium">All dual boilers will eventually develop a leak</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-amber-500/20 rounded-3xl blur-xl"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                  <h3 className="text-xl font-semibold mb-6 text-white text-center">Benefits of Regular Servicing</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Extended Machine Life</h4>
+                        <p className="text-gray-300">Regular servicing can double or triple the lifespan of your coffee machine.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Better Tasting Coffee</h4>
+                        <p className="text-gray-300">Clean components ensure optimal water flow, temperature, and pressure for the perfect extraction.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Cost Savings</h4>
+                        <p className="text-gray-300">Preventative maintenance is significantly cheaper than major repairs or replacement.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">Peace of Mind</h4>
+                        <p className="text-gray-300">Enjoy your coffee without worrying about unexpected breakdowns or safety issues.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 text-center">
+                    <p className="text-amber-300 font-medium mb-4">
+                      Service your Breville machine every 6 to 12 months
+                    </p>
+                    <SubmitFormButton />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Models Section */}
       <section id="machines" className="py-24 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
               Machines We Service
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -94,6 +238,7 @@ export default function Home() {
         </div>
       </section>
       
+      
       {/* Services Section */}
       <section id="services" className="py-24 relative">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
@@ -101,10 +246,10 @@ export default function Home() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
               Our Services
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Professional coffee machine services to keep your Breville running perfectly
             </p>
           </div>
@@ -217,7 +362,7 @@ export default function Home() {
       <section id="testimonials" className="py-24 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-500">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-500">
               What Our Customers Say
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -230,15 +375,15 @@ export default function Home() {
             <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl">
-                  J
+                  DP
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-white font-medium">James Wilson</h4>
-                  <p className="text-gray-400 text-sm">Bendigo</p>
+                  <h4 className="text-white font-medium">David Pluck</h4>
+                  <p className="text-gray-400 text-sm">Kangaroo Flat</p>
                 </div>
               </div>
               <p className="text-gray-300 italic">
-                "My Breville Oracle was making strange noises and leaking. The team fixed it quickly and now it works better than when it was new. Excellent service!"
+                "Best repairs in Bendigo, super fast reply. Can pick up and drop off. Knows a lot about Breville machines. Great work."
               </p>
               <div className="mt-4 flex">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -253,7 +398,7 @@ export default function Home() {
             <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-xl">
-                  S
+                  ST
                 </div>
                 <div className="ml-4">
                   <h4 className="text-white font-medium">Sarah Thompson</h4>
@@ -276,7 +421,7 @@ export default function Home() {
             <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-xl">
-                  M
+                  MC
                 </div>
                 <div className="ml-4">
                   <h4 className="text-white font-medium">Michael Chen</h4>
@@ -304,7 +449,7 @@ export default function Home() {
         
         <div className="container mx-auto px-6 relative">
           <div className="bg-gradient-to-r from-amber-500/10 to-red-500/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
               Ready to Fix Your Coffee Machine?
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">

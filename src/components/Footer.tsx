@@ -71,6 +71,14 @@ export default function Footer() {
           </div>
         </div>
         
+        {/* Copyright and Credits */}
+        <div className="border-t border-white/10 pt-6 mt-6 text-center">
+          <p className="text-gray-500 text-sm">
+            © {currentYear} Bendigo Breville. All rights reserved. 
+            <span className="mx-2">|</span>
+            <span>Website by <a href="https://samwhillance.com" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-amber-400 transition-colors">Samuel Whillance</a></span>
+          </p>
+        </div>
       </div>
     </footer>
   );

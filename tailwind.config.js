@@ -48,6 +48,40 @@ module.exports = {
         "float-fast": "float-fast 4s ease-in-out infinite",
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         shimmer: "shimmer 3s infinite linear",
+        "shake": "shake 0.4s cubic-bezier(.36,.07,.19,.97) infinite",
+        "steam1": "steam 3s ease-out infinite",
+        "steam2": "steam 3.5s ease-out 0.5s infinite",
+        "steam3": "steam 2.8s ease-out 1s infinite",
+        "breathe": "breathe 4s ease-in-out infinite",
+      },
+      keyframes: {
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "float-medium": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        "float-fast": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "shake": {
+          "0%, 100%": { transform: "translateX(0) rotate(0deg)" },
+          "10%, 30%, 50%, 70%, 90%": { transform: "translateX(-2.1px) rotate(-0.7deg)" },
+          "20%, 40%, 60%, 80%": { transform: "translateX(2.1px) rotate(0.7deg)" },
+        },
+        "steam": {
+          "0%": { opacity: "0", transform: "translateY(0) scale(1)" },
+          "15%": { opacity: "0.9", transform: "translateY(-5px) scale(1.1)" },
+          "50%": { opacity: "0.7", transform: "translateY(-15px) scale(1.5)" },
+          "100%": { opacity: "0", transform: "translateY(-30px) scale(2)" },
+        },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
