@@ -152,60 +152,60 @@ export default function Home() {
               
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-amber-500/20 rounded-3xl blur-xl"></div>
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-                  <h3 className="text-xl font-semibold mb-6 text-white text-center">Benefits of Regular Servicing</h3>
-                  <div className="space-y-6">
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10">
+                  <h3 className="text-xl font-semibold mb-4 sm:mb-6 text-white text-center">Benefits of Regular Servicing</h3>
+                  <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-3 sm:mr-4">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <div>
                         <h4 className="text-white font-medium">Extended Machine Life</h4>
-                        <p className="text-gray-300">Regular servicing can double or triple the lifespan of your coffee machine.</p>
+                        <p className="text-gray-300 text-sm sm:text-base">Regular servicing can double or triple the lifespan of your coffee machine.</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-3 sm:mr-4">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <div>
                         <h4 className="text-white font-medium">Better Tasting Coffee</h4>
-                        <p className="text-gray-300">Clean components ensure optimal water flow, temperature, and pressure for the perfect extraction.</p>
+                        <p className="text-gray-300 text-sm sm:text-base">Clean components ensure optimal water flow, temperature, and pressure for the perfect extraction.</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-3 sm:mr-4">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <div>
                         <h4 className="text-white font-medium">Cost Savings</h4>
-                        <p className="text-gray-300">Preventative maintenance is significantly cheaper than major repairs or replacement.</p>
+                        <p className="text-gray-300 text-sm sm:text-base">Preventative maintenance is significantly cheaper than major repairs or replacement.</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-4">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-3 sm:mr-4">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <div>
                         <h4 className="text-white font-medium">Peace of Mind</h4>
-                        <p className="text-gray-300">Enjoy your coffee without worrying about unexpected breakdowns or safety issues.</p>
+                        <p className="text-gray-300 text-sm sm:text-base">Enjoy your coffee without worrying about unexpected breakdowns or safety issues.</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="mt-8 text-center">
-                    <p className="text-amber-300 font-medium mb-4">
+                  <div className="mt-6 sm:mt-8 text-center">
+                    <p className="text-amber-300 font-medium mb-3 sm:mb-4 text-sm sm:text-base">
                       Service your Breville machine every 6 to 12 months
                     </p>
                     <SubmitFormButton />
