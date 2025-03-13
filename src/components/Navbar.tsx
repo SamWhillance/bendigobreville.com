@@ -27,29 +27,29 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           {/* Logo - hide when at top */}
-          <div className={isScrolled ? "opacity-100" : "opacity-0"}>
+          <div className={`${isScrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}>
             <Logo width={50} height={50} />
           </div>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 ml-auto">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
             <a
               href="#services"
-              className="text-white hover:text-amber-400 transition-colors"
+              className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
             >
               Services
             </a>
             <a
               href="#machines"
-              className="text-white hover:text-amber-400 transition-colors"
+              className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
             >
               Machines
             </a>
             <a
               href="#testimonials"
-              className="text-white hover:text-amber-400 transition-colors"
+              className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
             >
               Testimonials
             </a>
@@ -103,29 +103,29 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 items-center">
               <a
                 href="#services"
-                className="text-white hover:text-amber-400 transition-colors"
+                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </a>
               <a
                 href="#machines"
-                className="text-white hover:text-amber-400 transition-colors"
+                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Machines
               </a>
               <a
                 href="#testimonials"
-                className="text-white hover:text-amber-400 transition-colors"
+                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Testimonials
               </a>
-              <div className="pt-2">
+              <div className="pt-2 flex justify-center">
                 <WhatsAppButton />
               </div>
             </div>

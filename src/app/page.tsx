@@ -16,7 +16,7 @@ export default function Home() {
           {/* Background image with fallback gradient already applied underneath */}
           <div className="absolute top-0 left-0 w-full h-full">
             <Image 
-              src="/images/coffee-bg.jpg" 
+              src="/images/bg_01.jpg" 
               alt="Coffee machine background" 
               fill 
               priority
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center pt-16">
             <div className="mb-6 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-red-500 blur-lg opacity-70 rounded-full scale-150"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-red-500 blur-lg opacity-70 rounded-full scale-150 animate-breathe"></div>
               <div className="relative z-10 rounded-full overflow-hidden" style={{ width: 120, height: 120 }}>
                 <Image 
                   src="/logo.png" 
@@ -112,8 +112,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Repairs Card */}
             <div className="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#C1CACD]/80 to-[#9CBCC9] opacity-90 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute inset-0 opacity-[0.07]"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-500/80 to-red-500/80 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 rounded-3xl opacity-[0.07]"></div>
               
               <div className="relative p-8 md:p-10 h-full flex flex-col">
                 <div className="mb-6">
@@ -145,8 +145,8 @@ export default function Home() {
             
             {/* Maintenance Card */}
             <div className="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#9CBCC9]/80 to-[#3C8D9E] opacity-90 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute inset-0 opacity-[0.07]"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/80 to-purple-500/80 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 rounded-3xl opacity-[0.07]"></div>
               
               <div className="relative p-8 md:p-10 h-full flex flex-col">
                 <div className="mb-6">
@@ -179,8 +179,8 @@ export default function Home() {
             
             {/* Recycling Card */}
             <div className="group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] md:col-span-2 lg:col-span-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8DB7BB]/80 to-[#436c70] opacity-90 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute inset-0 opacity-[0.07]"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-500/80 to-teal-600/80 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 rounded-3xl opacity-[0.07]"></div>
               
               <div className="relative p-8 md:p-10 h-full flex flex-col">
                 <div className="mb-6">
