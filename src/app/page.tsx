@@ -30,17 +30,22 @@ export default function Home() {
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-amber-500/20 to-red-500/20 blur-3xl animate-float-medium"></div>
         
         {/* Hero Content */}
-        <div className="container mx-auto px-6 relative z-10 mt-[-5rem]">
-          <div className="flex flex-col items-center text-center">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col items-center text-center pt-16">
             <div className="mb-6 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-red-500 blur-lg opacity-70 rounded-full scale-150"></div>
-              <div className="relative z-10">
+              <div className="relative z-10 rounded-full overflow-hidden" style={{ width: 120, height: 120 }}>
                 <Image 
                   src="/logo.png" 
                   alt="Bendigo Breville Logo" 
                   width={120} 
                   height={120}
-                  className="relative z-10"
+                  className="rounded-full object-cover"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%'
+                  }}
                 />
               </div>
             </div>
@@ -59,7 +64,7 @@ export default function Home() {
               <WhatsAppButton />
             </div>
             
-            <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute -bottom-8 transform -translate-x-1/2 animate-bounce">
               <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
               </svg>

@@ -73,7 +73,7 @@ export default function RootLayout({
         <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.03] z-[-1]"></div>
         <GoogleAnalytics GA_MEASUREMENT_ID="G-CBQVZTTY25" />
         <Navbar />
-        <main className="relative pt-16">{children}</main>
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>

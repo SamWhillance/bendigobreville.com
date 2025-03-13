@@ -101,20 +101,6 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 text-center md:flex md:justify-between md:items-center">
-          <p className="text-gray-500 mb-4 md:mb-0">
-            © {currentYear} Bendigo Breville. All rights reserved.
-          </p>
-          <div className="flex justify-center md:justify-end space-x-6">
-            <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-500 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
       </div>
     </footer>
   );

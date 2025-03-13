@@ -11,7 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,11 +28,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Logo width={50} height={50} />
+          {/* Logo - hide when at top */}
+          <div className={isScrolled ? "opacity-100" : "opacity-0"}>
+            <Logo width={50} height={50} />
+          </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ml-auto">
             <a
               href="#services"
               className="text-white hover:text-amber-400 transition-colors"
