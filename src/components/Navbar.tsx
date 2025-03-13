@@ -18,6 +18,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -62,7 +74,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-white focus:outline-none z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -100,33 +112,44 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Full Screen Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4 items-center">
-              <a
-                href="#services"
-                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-              </a>
-              <a
-                href="#machines"
-                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Machines
-              </a>
-              <a
-                href="#testimonials"
-                className="text-white hover:text-amber-400 transition-colors text-center font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Testimonials
-              </a>
-              <div className="pt-2 flex justify-center">
-                <WhatsAppButton />
+          <div className="md:hidden fixed inset-0 z-40 flex items-center justify-center">
+            {/* Background with blur and gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a24]/95 to-[#0f0f12]/95 backdrop-blur-md"></div>
+            
+            {/* Menu Content */}
+            <div className="relative z-10 w-full max-w-sm mx-auto px-6 py-10">
+              {/* Logo at top */}
+              <div className="flex justify-center mb-12">
+                <Logo width={80} height={80} />
+              </div>
+              
+              <div className="flex flex-col space-y-8 items-center">
+                <a
+                  href="#services"
+                  className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Services
+                </a>
+                <a
+                  href="#machines"
+                  className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Machines
+                </a>
+                <a
+                  href="#testimonials"
+                  className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Testimonials
+                </a>
+                <div className="pt-8 flex justify-center">
+                  <WhatsAppButton />
+                </div>
               </div>
             </div>
           </div>
