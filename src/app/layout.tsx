@@ -45,9 +45,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bendigo Breville - Professional Appliance Repair Services",
+  title: "Bendigo Breville - Premium Coffee Machine Repair Specialists",
   description:
-    "Expert Breville appliance repair, maintenance, and parts in Bendigo",
+    "Expert Breville coffee machine repair, maintenance, and recycling services in Bendigo. Professional technicians, fast service, guaranteed results.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -66,12 +66,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lato.variable}`}
+      className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lato.variable} scroll-smooth`}
     >
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#0f0f12] text-white`}>
+        <div className="fixed inset-0 bg-gradient-to-br from-[#0f0f12] via-[#1a1a24] to-[#0f0f12] z-[-2]"></div>
+        <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.03] z-[-1]"></div>
         <GoogleAnalytics GA_MEASUREMENT_ID="G-CBQVZTTY25" />
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="relative pt-16">{children}</main>
         <Footer />
       </body>
     </html>
