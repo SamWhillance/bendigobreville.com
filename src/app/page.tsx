@@ -3,6 +3,161 @@ import ModelList from "@/components/ModelList";
 import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+// Add FAQ data array
+const FAQs = [
+  {
+    id: "no-fix-no-fee",
+    question: "What is your No Fix No Fee Policy?",
+    answer: "We stand by our work with a simple promise: if we can't fix your coffee machine, you don't pay a cent. We'll only charge for successful repairs, giving you peace of mind when you choose our services.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    ),
+    title: "No Fix No Fee Policy",
+    category: "Policies"
+  },
+  {
+    id: "no-surprise-fees",
+    question: "Do you have hidden fees?",
+    answer: "We provide a single, clear price upfront with our guarantee that your bill will never exceed this amount. No hidden costs or surprise fees - just one straightforward price with zero financial risk to you.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    ),
+    title: "No Surprise Fees Policy",
+    category: "Policies"
+  },
+  {
+    id: "melbourne-service",
+    question: "Do you service Melbourne?",
+    answer: "While we're based in Bendigo, we sometimes travel to Melbourne specifically for Breville Oracle repairs. Due to the complexity and value of these machines, we offer this specialized service to Melbourne customers. For all other models, our services are available throughout the Greater Bendigo region. Alternatively, you're welcome to bring your machine to our Bendigo workshop for service or repair, which is often the quickest option.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>
+    ),
+    title: "Melbourne Service Area",
+    category: "Service Areas"
+  },
+  
+  // Pricing and Warranty Questions
+  {
+    id: "repair-cost",
+    question: "How much does a coffee machine repair cost?",
+    answer: "Repair costs vary by model: Barista Express typically ranges from $200-$300, Dual Boiler repairs range from $300-$400, and Oracle repairs from $650-$800. These prices include parts and labor. For maintenance services, we offer inspections, seal replacements, group head servicing, grinder clean outs, and general maintenance starting at $90 for simpler models and $150 for dual boiler machines. Remember, with our No Fix No Fee policy, you only pay if we successfully repair your machine.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    ),
+    title: "Repair Costs",
+    category: "Pricing & Warranty"
+  },
+  {
+    id: "warranty",
+    question: "Do you offer any warranty on repairs?",
+    answer: "Yes, all our repairs come with a 90-day warranty. If your machine experiences the same issue within this period, we'll either repair it again at no cost or provide a full refund. This warranty covers both parts and labor, giving you complete peace of mind after your repair.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+      </svg>
+    ),
+    title: "Repair Warranty",
+    category: "Pricing & Warranty"
+  },
+  
+  // Service Process Questions
+  {
+    id: "repair-time",
+    question: "How long does a typical repair take?",
+    answer: "Most repairs are completed within 3-5 business days. More complex repairs, especially for Dual Boiler and Oracle models, may take 5-7 days. We do our best to keep most parts in stock, but if parts need to be ordered this may take longer. We'll always provide you with a timeframe estimate when you bring in your machine.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    ),
+    title: "Repair Timeframe",
+    category: "Service Process"
+  },
+  {
+    id: "all-models",
+    question: "Can you repair all Breville models?",
+    answer: "Yes, we can repair all Breville models, including espresso machines and grinders. Our expertise covers everything from the Bambino to the Oracle Touch, and we maintain a network of parts suppliers to ensure we can service any Breville coffee machine model.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    ),
+    title: "Model Coverage",
+    category: "Service Process"
+  },
+  {
+    id: "preparation",
+    question: "What should I do before bringing in my machine?",
+    answer: "Please empty your machine of both coffee and water before bringing it in. Remember to include your portafilter with the machine. If possible, note down any specific issues you've noticed and when they started occurring. This helps us diagnose and fix the problem more efficiently.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+      </svg>
+    ),
+    title: "Preparation Instructions",
+    category: "Service Process"
+  },
+  {
+    id: "pickup-delivery",
+    question: "Do you offer pickup and delivery services?",
+    answer: "Yes, we offer convenient pickup and delivery services throughout the Greater Bendigo region. We can collect your machine from your home or workplace and return it once the service or repair is complete. This service is particularly helpful for larger heavy machines or those with busy schedules.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+      </svg>
+    ),
+    title: "Pickup & Delivery",
+    category: "Service Areas"
+  },
+  {
+    id: "grinder-repairs",
+    question: "Can you repair Breville grinders as well as espresso machines?",
+    answer: "Yes, we repair all Breville grinders, including the Smart Grinder Pro, Dose Control Pro, and built-in grinders in machines like the Barista Express and Oracle. Common repairs include burr replacement, motor issues, and adjustment mechanism fixes.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+      </svg>
+    ),
+    title: "Grinder Repairs",
+    category: "Specialty Questions"
+  },
+  
+  // Maintenance Questions
+  {
+    id: "service-frequency",
+    question: "How often should I service my coffee machine?",
+    answer: "We recommend servicing your Breville coffee machine every 6-12 months, depending on usage. For heavy use (multiple coffees daily), aim for every 6 months. For lighter use, annual servicing is sufficient. Regular maintenance prevents mineral buildup, extends machine life, and ensures optimal coffee quality. Don't wait until problems arise - preventative maintenance is always more cost-effective than repairs.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+      </svg>
+    ),
+    title: "Service Frequency",
+    category: "Maintenance"
+  },
+  {
+    id: "repair-signs",
+    question: "What are signs my coffee machine needs repair?",
+    answer: "Watch for these warning signs: inconsistent water flow or pressure, unusual noises (grinding, buzzing), leaking water, a hot lid, or error messages on the display. Addressing these issues early can prevent more serious damage.",
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+      </svg>
+    ),
+    title: "Repair Signs",
+    category: "Maintenance"
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -462,6 +617,203 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-24 relative">
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Common questions about our services and policies
+            </p>
+          </div>
+          
+          {/* Group FAQs by category */}
+          {Array.from(new Set(FAQs.map(faq => faq.category))).map(category => (
+            <div key={category} className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-white">{category}</h3>
+              <div className="space-y-4">
+                {FAQs.filter(faq => faq.category === category).map((faq) => (
+                  <details 
+                    key={faq.id} 
+                    className="group bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-white/20"
+                  >
+                    <summary className="flex items-center p-6 cursor-pointer">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mr-4">
+                        {faq.icon}
+                      </div>
+                      <span className="text-xl font-medium text-white flex-grow">{faq.question}</span>
+                      <svg 
+                        className="w-6 h-6 text-white transform transition-transform duration-300 group-open:rotate-180" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2">
+                      <p className="text-gray-300">{faq.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* JSON-LD Schema for FAQs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
+
+      {/* JSON-LD Schema for LocalBusiness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bendigo Breville",
+            "image": "https://bendigobreville.com/logo.png",
+            "description": "Expert Breville coffee machine repair and maintenance services in the Greater Bendigo Region.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bendigo",
+              "addressRegion": "VIC",
+              "addressCountry": "AU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "-36.7570",
+              "longitude": "144.2794"
+            },
+            "url": "https://bendigobreville.com",
+            "telephone": "",
+            "priceRange": "$$",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:30",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/profile.php?id=100083324981791"
+            ]
+          })
+        }}
+      />
+
+      {/* JSON-LD Schema for Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Coffee Machine Repair",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Bendigo Breville"
+            },
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "-36.7570",
+                "longitude": "144.2794"
+              },
+              "geoRadius": "50000"
+            },
+            "description": "Professional Breville coffee machine repair and maintenance services with a No Fix No Fee policy.",
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "AUD"
+              }
+            }
+          })
+        }}
+      />
+
+      {/* JSON-LD Schema for Reviews */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bendigo Breville",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "3"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "David Pluck"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "reviewBody": "Best repairs in Bendigo, super fast reply. Can pick up and drop off. Knows a lot about Breville machines. Great work."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sarah Thompson"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "reviewBody": "Regular maintenance from Bendigo Breville has kept my Dual Boiler running perfectly for years. Professional, knowledgeable, and always on time."
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Michael Chen"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "reviewBody": "When my Breville was beyond repair, they helped me recycle it responsibly and gave me great advice on a replacement. Honest and environmentally conscious service."
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }

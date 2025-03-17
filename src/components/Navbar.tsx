@@ -70,6 +70,12 @@ export default function Navbar() {
             >
               Testimonials
             </a>
+            <a
+              href="#faq"
+              className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
+            >
+              FAQ
+            </a>
           </div>
 
           {/* CTA Button */}
@@ -158,6 +164,13 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Testimonials
+                </a>
+                <a
+                  href="#faq"
+                  className="text-white hover:text-amber-400 transition-colors text-center font-medium text-2xl"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FAQ
                 </a>
                 <div className="pt-8 flex justify-center">
                   <WhatsAppButton />
