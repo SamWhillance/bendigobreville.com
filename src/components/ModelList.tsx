@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 
 interface Model {
@@ -160,14 +161,14 @@ export default function ModelList() {
             <p className="text-sm text-center font-medium text-white/90 mb-2">
               {model.name}
             </p>
-            <div className="flex flex-col items-center space-y-1 mt-1">
+            {/* <div className="flex flex-col items-center space-y-1 mt-1">
               <p className="text-xs text-center text-amber-300">
                 <span className="font-medium">Service:</span> {model.service_price}
               </p>
               <p className="text-xs text-center text-amber-300">
                 <span className="font-medium">Repair:</span> {model.repair_price}
               </p>
-            </div>
+            </div> */}
           </div>
           
           {activeModel === model.id && (
