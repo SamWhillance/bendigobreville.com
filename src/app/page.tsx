@@ -140,7 +140,7 @@ const FAQs = [
     id: "repair-time",
     question: "How long does a typical repair take?",
     answer:
-      "Most repairs are completed within 3-5 business days. More complex repairs, especially for Dual Boiler and Oracle models, may take 5-7 days. We do our best to keep most parts in stock, but if parts need to be ordered this may take longer. We'll always provide you with a timeframe estimate when you bring in your machine.",
+      "Most repairs are completed within 3-5 business days or less. Sometimes less than 24 hours! More complex repairs, especially for Dual Boiler and Oracle models, may take 5-7 days. We do our best to keep most parts in stock, but if parts need to be ordered this may take longer. We'll always provide you with a timeframe estimate when you bring in your machine.",
     icon: (
       <svg
         className="w-6 h-6 text-white"
@@ -158,6 +158,30 @@ const FAQs = [
       </svg>
     ),
     title: "Repair Timeframe",
+    category: "Service Process",
+  },
+  {
+    id: "courtesy-machine",
+    question: "Do you offer a loaner machine while mine is being repaired?",
+    answer:
+      "Yes, we offer courtesy machines for customers to use while their coffee machine is being repaired, subject to availability. This service ensures you don't have to go without your morning coffee during the repair process. Please ask about this option as early as possible, and we'll do our best to accommodate you.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"
+        ></path>
+      </svg>
+    ),
+    title: "Courtesy Machines",
     category: "Service Process",
   },
   {
@@ -188,7 +212,7 @@ const FAQs = [
     id: "preparation",
     question: "What should I do before bringing in my machine?",
     answer:
-      "Please empty your machine of both coffee and water before bringing it in. Remember to include your portafilter with the machine. If possible, note down any specific issues you've noticed and when they started occurring. This helps us diagnose and fix the problem more efficiently.",
+      "Please empty your machine of both coffee and water before bringing it in. Leave your portafilter and accessories at home. If possible, note down any specific issues you've noticed and when they started occurring. This helps us diagnose and fix the problem more efficiently.",
     icon: (
       <svg
         className="w-6 h-6 text-white"
