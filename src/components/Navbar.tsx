@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import WhatsAppButton from "./WhatsAppButton";
-
+import SubmitFormButton from "./SubmitForm";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,12 +20,12 @@ export default function Navbar() {
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -40,10 +40,14 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between relative">
           {/* Logo - hide when at top */}
-          <div className={`${isScrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}>
+          <div
+            className={`${
+              isScrolled ? "opacity-100" : "opacity-0"
+            } transition-opacity duration-300`}
+          >
             <Logo width={50} height={50} />
           </div>
-          
+
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
             <a
@@ -80,7 +84,8 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <WhatsAppButton />
+            {/* <WhatsAppButton /> */}
+            <SubmitFormButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,14 +133,14 @@ export default function Navbar() {
           <div className="md:hidden fixed inset-0 z-40 flex items-center justify-center">
             {/* Background with blur and gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a24]/95 to-[#0f0f12]/95 backdrop-blur-md"></div>
-            
+
             {/* Menu Content */}
             <div className="relative z-10 w-full max-w-sm mx-auto px-6 py-10">
               {/* Logo at top */}
               <div className="flex justify-center mb-12">
                 <Logo width={80} height={80} />
               </div>
-              
+
               <div className="flex flex-col space-y-8 items-center">
                 <a
                   href="#maintenance"

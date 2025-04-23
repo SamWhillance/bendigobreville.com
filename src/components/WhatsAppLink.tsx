@@ -1,11 +1,9 @@
 "use client";
 
-import Link from "next/link";
-
 export default function WhatsAppLink() {
   return (
     <a
-      href="https://wa.me/61400000000?text=Hi%20there,%20I%20need%20help%20with%20my%20coffee%20machine."
+      href="https://wa.me/61468385315"
       target="_blank"
       rel="noopener noreferrer"
       className="text-white/80 hover:text-white transition-colors flex items-center"
