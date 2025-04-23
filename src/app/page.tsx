@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import ModelList from "@/components/ModelList";
 import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CallButton from "@/components/CallButton";
+import { useEffect, useState } from "react";
 
 // Add FAQ data array
 const FAQs = [
@@ -333,6 +335,21 @@ const FAQs = [
 ];
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  // Add scroll event listener to track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate parallax transform - background moves at 80% of scroll speed
+  const parallaxY = scrollY * 0.4; // This creates the 80% effect (100% - 80% = 20% movement)
+
   return (
     <>
       {/* Hero Section with Parallax Effect */}
@@ -341,8 +358,13 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a24] to-[#0f0f12]"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f0f12]/90 z-10"></div>
-          {/* Background image with fallback gradient already applied underneath */}
-          <div className="absolute top-0 left-0 w-full h-full">
+          {/* Background image with parallax effect - style transform applied inline */}
+          <div
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              transform: `translateY(${parallaxY}px)`,
+            }}
+          >
             <Image
               src="/images/bg_01.jpg"
               alt="Coffee machine background"
