@@ -4,7 +4,7 @@ import ModelList from "@/components/ModelList";
 import SubmitFormButton from "@/components/SubmitForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CallButton from "@/components/CallButton";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // Add FAQ data array
 const FAQs = [
@@ -336,6 +336,8 @@ const FAQs = [
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef(null);
+  const ctaRef = useRef(null);
 
   // Add scroll event listener to track scroll position
   useEffect(() => {
@@ -353,16 +355,20 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Parallax Effect */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        ref={heroRef}
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a24] to-[#0f0f12]"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f0f12]/90 z-10"></div>
-          {/* Background image with parallax effect - style transform applied inline */}
+          {/* Background image with JS-based parallax */}
           <div
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full will-change-transform"
             style={{
               transform: `translateY(${parallaxY}px)`,
+              backfaceVisibility: "hidden",
             }}
           >
             <Image
@@ -960,23 +966,41 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative">
+      <section className="py-24 relative" ref={ctaRef}>
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-red-500/20 rounded-3xl blur-3xl"></div>
 
         <div className="container mx-auto px-6 relative">
-          <div className="bg-gradient-to-r from-amber-500/10 to-red-500/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-red-500">
-              Ready to Fix Your Coffee Machine?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-              Contact us today for fast, professional Breville coffee machine
-              repairs and maintenance in Bendigo
-            </p>
+          <div className="relative rounded-3xl p-8 md:p-12 border border-white/10 text-center overflow-hidden">
+            {/* Background with JS-based parallax */}
+            <div className="absolute inset-0 z-0">
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-amber-800/90 via-amber-700/80 to-red-700/80 will-change-transform"
+                style={{
+                  transform: `translateY(${scrollY * 0.5}px)`,
+                  height: "200%",
+                  top: "-50%",
+                  backfaceVisibility: "hidden",
+                }}
+              ></div>
+              <div className="absolute inset-0 opacity-30 mix-blend-overlay bg-[url('/images/noise.png')] bg-repeat"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-red-500/10 rounded-3xl backdrop-blur-sm"></div>
+            </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
-              <SubmitFormButton />
-              <WhatsAppButton />
-              <CallButton />
+            {/* Content */}
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold pb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-100 to-white tracking-tight">
+                Ready to Fix Your Coffee Machine?
+              </h2>
+              <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+                Contact us today for fast, professional Breville coffee machine
+                repairs and maintenance in Bendigo
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+                <SubmitFormButton />
+                <WhatsAppButton />
+                <CallButton />
+              </div>
             </div>
           </div>
         </div>
