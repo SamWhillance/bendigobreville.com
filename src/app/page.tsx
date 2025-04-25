@@ -356,7 +356,7 @@ export default function Home() {
     <>
       {/* Hero Section with Parallax Effect */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24"
         ref={heroRef}
       >
         {/* Background Elements */}
@@ -419,27 +419,30 @@ export default function Home() {
               the Greater Bendigo Region.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4 mb-16">
+            <div className="flex flex-col md:flex-row gap-4 mb-24">
               <SubmitFormButton />
               <WhatsAppButton />
               <CallButton />
             </div>
 
-            <div className="absolute -bottom-8 transform -translate-x-1/2 animate-bounce">
-              <svg
-                className="w-10 h-10 text-white/50"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                ></path>
-              </svg>
+            {/* Arrow Down Animation */}
+            <div className="flex justify-center w-full absolute bottom-8 transform translate-y-1/2">
+              <div className="animate-bounce">
+                <svg
+                  className="w-10 h-10 text-white/50"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -529,7 +532,8 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-center text-amber-300 text-sm mt-2 animate-pulse font-medium">
-                      All dual boilers will eventually develop a leak
+                      The reality is that all dual boilers will eventually
+                      develop a leak if left unserviced
                     </p>
                   </div>
                 </div>
@@ -566,34 +570,6 @@ export default function Home() {
                         <p className="text-gray-300 text-sm sm:text-base">
                           Regular servicing can double or triple the lifespan of
                           your coffee machine.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-amber-500 to-red-500 flex items-center justify-center mr-3 sm:mr-4">
-                        <svg
-                          className="w-4 h-4 sm:w-5 sm:h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-medium">
-                          Better Tasting Coffee
-                        </h4>
-                        <p className="text-gray-300 text-sm sm:text-base">
-                          Clean components ensure optimal water flow,
-                          temperature, and pressure for the perfect extraction.
                         </p>
                       </div>
                     </div>
@@ -934,18 +910,25 @@ export default function Home() {
             {/* Testimonial 3 */}
             <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-xl">
-                  MC
+                <div className="w-12 h-12">
+                  <Image
+                    src="/images/review_lobsang.png"
+                    alt="Lobsang Dorje"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-white font-medium">Michael Chen</h4>
+                  <h4 className="text-white font-medium">Lobsang Dorje</h4>
                   <p className="text-gray-400 text-sm">Bendigo</p>
                 </div>
               </div>
               <p className="text-gray-300 italic">
-                "When my Breville was beyond repair, they helped me recycle it
-                responsibly and gave me great advice on a replacement. Honest
-                and environmentally conscious service."
+                "Took my Breville apart while I waited, found the fault and
+                replaced the part. It took maybe ten minutes and I could go back
+                home and continue to enjoy coffee. Quick, expert level repairs
+                and very reasonably priced. Highly recommend!"
               </p>
               <div className="mt-4 flex">
                 {[1, 2, 3, 4, 5].map((star) => (
