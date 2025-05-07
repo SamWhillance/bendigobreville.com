@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,6 +73,11 @@ export default function RootLayout({
         <div className="fixed inset-0 bg-gradient-to-br from-[#0f0f12] via-[#1a1a24] to-[#0f0f12] z-[-2]"></div>
         <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.03] z-[-1]"></div>
         <GoogleAnalytics GA_MEASUREMENT_ID="G-CBQVZTTY25" />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="EyLLJuKTd9cIuOfU5G8eTw"
+          strategy="afterInteractive"
+        />
         <Navbar />
         <main className="relative">{children}</main>
         <Footer />
