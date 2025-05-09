@@ -1111,7 +1111,7 @@ export default function Home() {
                 closes: "18:00",
               },
             ],
-            sameAs: ["https://www.facebook.com/profile.php?id=100083324981791"],
+            sameAs: ["https://www.facebook.com/bendigobreville"],
           }),
         }}
       />
