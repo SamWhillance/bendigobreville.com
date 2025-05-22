@@ -99,12 +99,12 @@ export default function Footer() {
             <span>
               Website by{" "}
               <a
-                href="https://samwhillance.com"
+                href="https://bendigoweb.site"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-amber-500 hover:text-amber-400 transition-colors"
               >
-                Samuel Whillance
+                Bendigo Web
               </a>
             </span>
           </p>
